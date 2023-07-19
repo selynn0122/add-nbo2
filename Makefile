@@ -1,10 +1,16 @@
+CC = gcc
+CFLAGS = -Wall -Wextra -std=c99
+
 all: add-nbo
 
 add-nbo: add-nbo.o
-        gcc -o add-nbo add-nbo.o
+	$(CC) $(CFLAGS) -o add-nbo add-nbo.o
 
-add-nbo.o: add-nbo.cpp
-        gcc -c -o add-nbo.o add-nbo.cpp
+add-nbo.o: add-nbo.c
+	$(CC) $(CFLAGS) -c -o add-nbo.o add-nbo.c
 
 clean:
-        rm -f add-nbo *.o
+	rm -f add-nbo *.o
+
+
+
